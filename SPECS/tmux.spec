@@ -1,6 +1,6 @@
 Name:           tmux
 Version:        2.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A terminal multiplexer
 
 Group:          Applications/System
@@ -11,7 +11,12 @@ URL:            https://tmux.github.io/
 Source0:        https://github.com/tmux/tmux/releases/download/%{version}/tmux-%{version}.tar.gz
 
 BuildRequires:  ncurses-devel
+%if 0%{?rhel}  == 7
 BuildRequires:  libevent-devel
+%endif
+%if 0%{?rhel}  == 6
+BuildRequires:  libevent2-devel
+%endif
 
 %description
 tmux is a "terminal multiplexer."  It enables a number of terminals (or
@@ -49,6 +54,9 @@ fi
 %{_mandir}/man1/tmux.1.*
 
 %changelog
+* Sat Feb 25 2017 Hiroaki Nakamura <hnakamur@gmail.com> - 2.3-2
+- Build on CentOS 6 too
+
 * Sat Feb 25 2017 Hiroaki Nakamura <hnakamur@gmail.com> - 2.3-1
 - Update to 2.3
 

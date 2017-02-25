@@ -1,7 +1,7 @@
 tmux-rpm
 =========
 
-A Dockerfile to build [tmux](https://tmux.github.io/) rpm for CentOS 7 using [fedora copr](https://copr.fedoraproject.org/).
+A Dockerfile to build [tmux](https://tmux.github.io/) rpm for CentOS 6 and 7 using [fedora copr](https://copr.fedoraproject.org/).
 
 ## Setup
 
